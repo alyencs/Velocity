@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>McLaren 750s</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Anton&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: radial-gradient(circle at center, #ffffff, #0e0e0e 70%);
+      color: white;
+      overflow-x: hidden;
+      transition: background 0.8s ease;
+    }
+
+    .container {
+      width: 100%;
+      min-height: 100vh;
+      padding: 2rem 4rem;
+    }
+
+    /* HEADER */
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.5rem;
+    }
+
+    .logo img {
+      width: 250px;
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .nav-box {
+      display: flex;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 0.6rem 2rem;
+      border-radius: 8px;
+      backdrop-filter: blur(8px);
+    }
+
+    nav a {
+      color: white;
+      margin: 0 1.2rem;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #a0a0a0;
+    }
+
+    .btn-primary {
+      background: linear-gradient(90deg, #7c7c7c, #ffffff);
+      color: black;
+      border: none;
+      padding: 0.7rem 1.6rem;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 3px 8px rgba(255, 255, 255, 0.15);
+      transition: transform 0.2s ease;
+    }
+
+    .btn-primary:hover {
+      transform: scale(1.05);
+    }
+
+    /* HERO SECTION */
+    .hero {
+      text-align: center;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .intro {
+      max-width: 960px;
+      color: #ccc;
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-top: 3.7rem;
+    }
+
+    .title {
+      font-family: 'Anton', sans-serif;
+      font-size: 10.5rem;
+      font-weight: 900;
+      color: white;
+      letter-spacing: 8px;
+      position: absolute;
+      top: 11%;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    /* CAR DISPLAY */
+    .car-display {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      margin-top: -3rem;
+    }
+
+    .car-image img {
+      width: 110%;
+      max-width: 1030px;
+      z-index: 2;
+      filter: drop-shadow(0 10px 35px rgba(0, 0, 0, 0.8));
+      transition: all 0.6s ease;
+    }
+
+    /* Color Options */
+    .color-options {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      right: -7%;
+      top: 42%;
+      transform: translateY(-50%);
+      z-index: 3;
+    }
+
+    .dot {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      margin: 10px 0;
+      cursor: pointer;
+      border: 1px solid #fff;
+      transition: transform 0.3s ease, border 0.3s ease;
+    }
+
+    .dot:hover {
+      transform: scale(1.2);
+    }
+
+    .black { background: #111; }
+    .blue { background: #292D86; }
+    .orange { background: #C85D15; }
+
+    .active {
+      transform: scale(1.3);
+      border: 3px solid #fff;
+    }
+
+    /* STATS */
+    .stats {
+      display: flex;
+      justify-content: space-around;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      width: 100%;
+      margin-top: -4rem;
+      padding-bottom: 1.5rem;
+    }
+
+    .stat-box {
+      background: #707070;
+      border: 2px solid white;
+      width: 180px;
+      height: 100px;
+      border-radius: 15px;
+      text-align: center;
+      padding: 1rem 0;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+    }
+
+    .stat-box h3 {
+      font-size: 1.6rem;
+    }
+
+    .model-info {
+      text-align: center;
+      transform: translateY(-35px);
+    }
+
+    .model-info h2 {
+      font-family: 'Anton', sans-serif;
+      font-size: 2.4rem;
+      margin-bottom: 0.5rem;
+      letter-spacing: 2px;
+      transition: color 0.3s ease;
+    }
+
+    .btn-secondary {
+      display: inline-block;
+      background: linear-gradient(90deg, #ffffff, #bfbfbf);
+      color: black;
+      border: none;
+      padding: 1rem 0;
+      width: 220px;
+      border-radius: 12px;
+      font-size: 1.15rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .btn-secondary:hover {
+      transform: scale(1.05);
+    }
+
+    /* Animation for car transition */
+    .fade-out {
+    opacity: 0;
+    transform: scale(0.98);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    }
+
+    .fade-in {
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header>
+      <div class="logo">
+        <img src="McLaren/mclaren logo.png" alt="McLaren Logo" />
+      </div>
+
+      <div class="nav-right">
+        <div class="nav-box">
+          <nav>
+            <a href="Home.html">Home</a>
+            <a href="McLaren.html" style="color: #aaa; font-weight: 600;">Cars</a>
+            <a href="Compare.html">Compare</a>
+            <a href="Contact.html">Contact</a>
+          </nav>
+        </div>
+        <button class="btn-primary" onclick="window.location.href='Contact.html'">Get Started</button>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <p class="intro">
+        The 750S takes the McLaren ethos to a new apex. True to its DNA, it's the next-level supercar. Surpassing the benchmarks for performance, engagement and purity of response. Shaped by an innovation and expertise forged and honed in Formula 1™. The 750S is the living, breathing proof that - at McLaren - progress is never over.
+      </p>
+
+      <h1 class="title">MCLAREN 750s</h1>
+
+      <!-- Car and Color Options -->
+      <div class="car-display">
+        <div class="car-image">
+          <img id="carImage" src="McLaren/anthracite edited.png" alt="Aston Martin Vanquish" />
+        </div>
+
+        <div class="color-options">
+          <span class="dot black active"
+                data-img="McLaren/anthracite edited.png"
+                data-color-name="ANTHRACITE"
+                data-bg="radial-gradient(circle at center, #ffffff, #0e0e0e 70%)"></span>
+
+          <span class="dot blue"
+                data-img="McLaren/aurora blue edited.png"
+                data-color-name="AURORA BLUE"
+                data-bg="radial-gradient(circle at center, #292D86, #000000 70%)"></span>
+
+          <span class="dot orange"
+                data-img="McLaren/mclaren orange.png"
+                data-color-name="MCLAREN ORANGE"
+                data-bg="radial-gradient(circle at center, #C85D15, #0e0e0e 70%)"></span>
+        </div>
+      </div>
+
+      <!-- Stats -->
+      <div class="stats">
+        <div class="stat-box">
+          <h3>348 mi</h3>
+          <p>Range (EPA est.)</p>
+        </div>
+        <div class="stat-box">
+          <h3>1.99 s</h3>
+          <p>0-60 mph*</p>
+        </div>
+
+        <div class="model-info">
+          <h2>BLACK PEARL</h2>
+          <button class="btn-secondary">ORDER NOW</button>
+        </div>
+
+        <div class="stat-box">
+          <h3>200 mph</h3>
+          <p>Top Speed*</p>
+        </div>
+        <div class="stat-box">
+          <h3>1,020 hp</h3>
+          <p>Peak Power</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+<script>
+  const dots = document.querySelectorAll('.dot');
+  const carImage = document.getElementById('carImage');
+  const modelName = document.querySelector('.model-info h2');
+
+  dots.forEach(dot => {
+    dot.addEventListener('click', () => {
+      dots.forEach(d => d.classList.remove('active'));
+      dot.classList.add('active');
+
+      carImage.classList.remove('fade-in');
+      carImage.classList.add('fade-out');
+
+      setTimeout(() => {
+        carImage.src = dot.getAttribute('data-img');
+        modelName.textContent = dot.getAttribute('data-color-name');
+        document.body.style.background = dot.getAttribute('data-bg');
+
+        carImage.classList.remove('fade-out');
+        carImage.classList.add('fade-in');
+      }, 400); 
+    });
+  });
+</script>
+
+</body>
+</html>
