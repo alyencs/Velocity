@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Car Comparison | Velocity</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Anton&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: radial-gradient(circle at center, #5b0a0a, #0b0000 80%);
+      color: white;
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 2rem 0;
+    }
+
+    /* HEADER */
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 2rem;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .logo img {
+      width: 150px;
+    }
+
+    .logo span {
+      font-weight: 600;
+      font-size: 1.4rem;
+      letter-spacing: 1px;
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .nav-box {
+      display: flex;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 0.6rem 2rem;
+      border-radius: 8px;
+      backdrop-filter: blur(8px);
+    }
+
+    nav a {
+      color: white;
+      margin: 0 1.2rem;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #aaa;
+    }
+
+    .btn-primary {
+      background: linear-gradient(90deg, #ffffff, #cfcfcf);
+      color: black;
+      border: none;
+      padding: 0.7rem 1.5rem;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 3px 8px rgba(255, 255, 255, 0.15);
+      transition: transform 0.2s ease;
+    }
+
+    .btn-primary:hover {
+      transform: scale(1.05);
+    }
+
+    /* HERO SECTION */
+    .hero {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .hero h1 {
+      font-family: 'Anton', sans-serif;
+      font-size: 3rem;
+      letter-spacing: 2px;
+    }
+
+    .hero p {
+      color: #ddd;
+      font-size: 1.1rem;
+      margin-top: 0.5rem;
+    }
+
+    /* COMPARISON SECTION */
+    .comparison-box {
+      background: rgba(0, 0, 0, 0.5);
+      border-radius: 20px;
+      padding: 2rem;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      box-shadow: 0 0 25px rgba(255, 50, 50, 0.15);
+      backdrop-filter: blur(6px);
+    }
+
+    .comparison-box img.hero-car {
+      width: 100%;
+      border-radius: 15px;
+      margin-bottom: 2rem;
+    }
+
+    .car-entry {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 1.5rem 0;
+    }
+
+    .car-entry:first-child {
+      border-top: none;
+    }
+
+    .car-info {
+      flex: 1;
+      padding-right: 2rem;
+    }
+
+    .car-info h2 {
+      font-family: 'Anton', sans-serif;
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .car-info p {
+      font-size: 0.95rem;
+      color: #ccc;
+      line-height: 1.6;
+    }
+
+    .car-num {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #aaa;
+      width: 40px;
+    }
+
+    .car-img img {
+      width: 180px;
+      filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.8));
+      transition: transform 0.3s ease;
+    }
+
+    .car-img img:hover {
+      transform: scale(1.05);
+    }
+
+    /* FOOTER */
+    footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 3rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      font-size: 0.9rem;
+      color: #ccc;
+    }
+
+    footer .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    footer .footer-logo img {
+      width: 100px;
+    }
+
+    footer .contact-icons i {
+      margin-left: 1rem;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+
+    footer .contact-icons i:hover {
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <!-- HEADER -->
+    <header>
+      <div class="logo">
+        <img src="Images/velocity logo.png" alt="Velocity Logo" />
+      </div>
+
+      <div class="nav-right">
+        <div class="nav-box">
+          <nav>
+            <a href="#">Home</a>
+            <a href="#">Cars</a>
+            <a href="#" style="color: #aaa; font-weight: 600;">Compare</a>
+            <a href="#">Contact</a>
+          </nav>
+        </div>
+        <button class="btn-primary">Get Started</button>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+      <h1>CAR COMPARISON</h1>
+      <p>Compare your favorite cars here!</p>
+    </section>
+
+    <!-- COMPARISON SECTION -->
+    <div class="comparison-box">
+      <img src="velocity/bg red.jpg" alt="Audi R8" class="hero-car" />
+
+      <!-- 1 -->
+      <div class="car-entry">
+        <div class="car-num">01</div>
+        <div class="car-info">
+          <h2>ASTON MARTIN: VANQUISH</h2>
+          <p>A grand tourer that blends British elegance with modern performance, the Vanquish delivers breathtaking speed in hand-crafted luxury. Its presence on the road is both commanding and refined.</p>
+        </div>
+        <div class="car-img">
+          <img src="aston martin/black.png" alt="Aston Martin Vanquish" />
+        </div>
+      </div>
+
+      <!-- 2 -->
+      <div class="car-entry">
+        <div class="car-num">02</div>
+        <div class="car-info">
+          <h2>FERRARI: SF90 SPIDER</h2>
+          <p>Ferrari's first plug-in hybrid convertible combines futuristic technology with raw Italian passion, unleashing blistering performance with open-top exhilaration. It redefines supercar innovation while staying true to Ferrari’s racing spirit.</p>
+        </div>
+        <div class="car-img">
+          <img src="ferrari/sf90 spider.png" alt="Ferrari SF90 Spider" />
+        </div>
+      </div>
+
+      <!-- 3 -->
+      <div class="car-entry">
+        <div class="car-num">03</div>
+        <div class="car-info">
+          <h2>LAMBORGHINI: TEMERARIO</h2>
+          <p>The Temerario is Lamborghini's boldest vision, with a roaring V12 hybrid and sculpted lines that embody fearless design and uncompromising speed. Built for dominance, it pushes the boundaries of what a modern supercar can be.</p>
+        </div>
+        <div class="car-img">
+          <img src="lamborghini/temerario.png" alt="Lamborghini Temerario" />
+        </div>
+      </div>
+
+      <!-- 4 -->
+      <div class="car-entry">
+        <div class="car-num">04</div>
+        <div class="car-info">
+          <h2>MCLAREN: 750S</h2>
+          <p>Lightweight engineering and a twin-turbo V8 deliver explosive acceleration and razor-sharp handling, making the 750S a pure evolution of driving focus. Every detail is honed for drivers who demand both precision and passion.</p>
+        </div>
+        <div class="car-img">
+          <img src="mclaren/750s.png" alt="McLaren 750S" />
+        </div>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-logo">
+        <img src="Images/velocity logo v2.png" alt="Velocity Logo" />
+        <span>© 2025 Velocity. All rights reserved.</span>
+      </div>
+      <div class="contact-icons">
+        <span>Contact Information</span>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
