@@ -17,10 +17,23 @@
 
     body {
       font-family: 'Outfit', sans-serif;
-      background: radial-gradient(circle at center, #5b0a0a, #0b0000 80%);
       color: white;
       overflow-x: hidden;
       min-height: 100vh;
+      position: relative;
+    }
+
+    /* ===== BACKGROUND IMAGE ===== */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url("Images/background image.jpg") no-repeat center center/cover;
+      filter: blur(12px) brightness(0.5);
+      z-index: -1;
     }
 
     .container {
@@ -30,7 +43,7 @@
       padding: 2rem 0;
     }
 
-    /* HEADER */
+    /* ===== HEADER ===== */
     header {
       display: flex;
       align-items: center;
@@ -46,12 +59,6 @@
 
     .logo img {
       width: 150px;
-    }
-
-    .logo span {
-      font-weight: 600;
-      font-size: 1.4rem;
-      letter-spacing: 1px;
     }
 
     .nav-right {
@@ -99,7 +106,7 @@
       transform: scale(1.05);
     }
 
-    /* HERO SECTION */
+    /* ===== HERO SECTION ===== */
     .hero {
       text-align: center;
       margin-bottom: 2rem;
@@ -117,14 +124,14 @@
       margin-top: 0.5rem;
     }
 
-    /* COMPARISON SECTION */
+    /* ===== COMPARISON BOX ===== */
     .comparison-box {
-      background: rgba(0, 0, 0, 0.5);
+      background: rgba(0, 0, 0, 0.55);
       border-radius: 20px;
       padding: 2rem;
       border: 1px solid rgba(255, 255, 255, 0.15);
       box-shadow: 0 0 25px rgba(255, 50, 50, 0.15);
-      backdrop-filter: blur(6px);
+      backdrop-filter: blur(8px);
     }
 
     .comparison-box img.hero-car {
@@ -138,11 +145,18 @@
       align-items: center;
       justify-content: space-between;
       border-top: 1px solid rgba(255, 255, 255, 0.2);
-      padding: 1.5rem 0;
+      padding: 1.8rem 0;
     }
 
     .car-entry:first-child {
       border-top: none;
+    }
+
+    .car-num {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #aaa;
+      width: 60px; 
     }
 
     .car-info {
@@ -152,21 +166,14 @@
 
     .car-info h2 {
       font-family: 'Anton', sans-serif;
-      font-size: 1.5rem;
-      margin-bottom: 0.5rem;
+      font-size: 1.6rem;
+      margin-bottom: 0.6rem;
     }
 
     .car-info p {
       font-size: 0.95rem;
       color: #ccc;
       line-height: 1.6;
-    }
-
-    .car-num {
-      font-size: 1.2rem;
-      font-weight: 600;
-      color: #aaa;
-      width: 40px;
     }
 
     .car-img img {
@@ -179,38 +186,53 @@
       transform: scale(1.05);
     }
 
-    /* FOOTER */
+    /* ===== FOOTER ===== */
     footer {
+      background-color: #252525;
       display: flex;
       align-items: center;
       justify-content: space-between;
       margin-top: 3rem;
-      padding-top: 1rem;
+      padding: 1.5rem 2rem;
       border-top: 1px solid rgba(255, 255, 255, 0.2);
       font-size: 0.9rem;
       color: #ccc;
+      border-radius: 10px 10px 0 0;
     }
 
     footer .footer-logo {
       display: flex;
       align-items: center;
-      gap: 0.5rem;
+      gap: 1.2rem; 
     }
 
     footer .footer-logo img {
       width: 100px;
     }
 
-    footer .contact-icons i {
-      margin-left: 1rem;
-      font-size: 1rem;
+    .contact-icons {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      text-align: right;
+      gap: 0.5rem;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .social-icons i {
+      font-size: 1.2rem;
       cursor: pointer;
       transition: color 0.3s ease;
     }
 
-    footer .contact-icons i:hover {
+    .social-icons i:hover {
       color: white;
     }
+
   </style>
 </head>
 
@@ -243,7 +265,7 @@
 
     <!-- COMPARISON SECTION -->
     <div class="comparison-box">
-      <img src="velocity/bg red.jpg" alt="Audi R8" class="hero-car" />
+      <img src="Images/background image.jpg" alt="Audi R8" class="hero-car" />
 
       <!-- 1 -->
       <div class="car-entry">
@@ -253,7 +275,7 @@
           <p>A grand tourer that blends British elegance with modern performance, the Vanquish delivers breathtaking speed in hand-crafted luxury. Its presence on the road is both commanding and refined.</p>
         </div>
         <div class="car-img">
-          <img src="aston martin/black.png" alt="Aston Martin Vanquish" />
+          <img src="aston martin/front am 1.png" alt="Aston Martin Vanquish" />
         </div>
       </div>
 
@@ -265,7 +287,7 @@
           <p>Ferrari's first plug-in hybrid convertible combines futuristic technology with raw Italian passion, unleashing blistering performance with open-top exhilaration. It redefines supercar innovation while staying true to Ferrari’s racing spirit.</p>
         </div>
         <div class="car-img">
-          <img src="ferrari/sf90 spider.png" alt="Ferrari SF90 Spider" />
+          <img src="ferrari/ferrari front 1.png" alt="Ferrari SF90 Spider" />
         </div>
       </div>
 
@@ -277,7 +299,7 @@
           <p>The Temerario is Lamborghini's boldest vision, with a roaring V12 hybrid and sculpted lines that embody fearless design and uncompromising speed. Built for dominance, it pushes the boundaries of what a modern supercar can be.</p>
         </div>
         <div class="car-img">
-          <img src="lamborghini/temerario.png" alt="Lamborghini Temerario" />
+          <img src="lamborghini/lambo front.png" alt="Lamborghini Temerario" />
         </div>
       </div>
 
@@ -289,7 +311,7 @@
           <p>Lightweight engineering and a twin-turbo V8 deliver explosive acceleration and razor-sharp handling, making the 750S a pure evolution of driving focus. Every detail is honed for drivers who demand both precision and passion.</p>
         </div>
         <div class="car-img">
-          <img src="mclaren/750s.png" alt="McLaren 750S" />
+          <img src="mclaren/front mclaren 1.png" alt="McLaren 750S" />
         </div>
       </div>
     </div>
@@ -301,6 +323,12 @@
         <span>© 2025 Velocity. All rights reserved.</span>
       </div>
       <div class="contact-icons">
+        <div class="social-icons">
+          <i class="fas fa-phone"></i>
+          <i class="fas fa-envelope"></i>
+          <i class="fab fa-whatsapp"></i>
+          <i class="fas fa-location-dot"></i>
+        </div>
         <span>Contact Information</span>
       </div>
     </footer>
