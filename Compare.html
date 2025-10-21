@@ -299,8 +299,201 @@
       transform: scale(1.15);
     }
 
+    /* ===== MOBILE HAMBURGER ===== */
+    .hamburger {
+      display: none;
+      width: 24px;
+      height: 20px;
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      flex-direction: column;
+      justify-content: space-between;
+      cursor: pointer;
+      z-index: 300;
+    }
+
+    .hamburger span {
+      display: block;
+      height: 2.5px;
+      width: 100%;
+      background: white;
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+
+    .mobile-nav {
+      display: none;
+      flex-direction: column;
+      gap: 0.8rem;
+      background: rgba(0,0,0,0.85);
+      padding: 1rem 1.5rem;
+      border-radius: 10px;
+      position: absolute;
+      top: 70px;
+      right: 5%;
+      z-index: 200;
+    }
+
+    .mobile-nav a {
+      color: #fff;
+      font-weight: 600;
+      text-align: center;
+      padding: 0.5rem 0;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .mobile-nav a:hover {
+      color: #ccc;
+    }
+
     /* ===== RESPONSIVE ===== */
-    @media (max-width: 768px) {
+    /* DESKTOP */
+    @media (min-width:1025px) {
+    }
+
+    /* TABLET */
+    @media (max-width:1024px) and (min-width:481px) {
+      header {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .logo {
+        order: -1;
+        margin-bottom: 1rem;
+      }
+
+      .nav-right {
+        justify-content: center;
+        width: 100%;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+    }
+
+    /* PRINT */
+    @media print {
+      body {
+        background: #fff;
+        color: #000;
+      }
+
+      /* Hide header, buttons, hero image, hamburger, and footer */
+      header, .btn-primary, .hamburger, .mobile-nav, .hero, footer {
+        display: none !important;
+      }
+
+      /* Remove background images */
+      body::before, .comparison-box {
+        background: none !important;
+        box-shadow: none !important;
+      }
+
+      /* Comparison box table formatting */
+      .comparison-box {
+        padding: 0;
+        border: none;
+        box-shadow: none;
+        overflow: visible;
+      }
+
+      table.comparison-table {
+        width: 100%;
+        border: 1px solid #000;
+        table-layout: auto;
+      }
+
+      table.comparison-table th,
+      table.comparison-table td {
+        border: 1px solid #000;
+        padding: 0.3rem 0.5rem;
+        color: #000;
+      }
+
+      table.comparison-table img {
+        width: 100px;
+        height: auto;
+        border: none;
+      }
+
+      .car-desc {
+        font-size: 0.85rem;
+        color: #000;
+      }
+
+      .notes-row td {
+        font-size: 0.8rem;
+        color: #000;
+        padding: 0.5rem;
+      }
+
+      tr {
+        page-break-inside: avoid;
+      }
+    }
+
+    /* MOBILE */
+    @media (max-width:480px) {
+      header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 5%;
+        position: relative;
+      }
+
+      .logo img {
+        width: 120px;
+      }
+
+      .nav-box,
+      .btn-primary {
+        display: none;
+      }
+
+      .hamburger {
+        display: flex;
+        width: 24px;
+        height: 20px;
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        flex-direction: column;
+        justify-content: space-between;
+        z-index: 300;
+      }
+
+      .hamburger span {
+        height: 2.5px;
+      }
+
+      .hero h1 {
+        font-size: 1.8rem; 
+      }
+
+      .hero p {
+        font-size: 0.9rem; 
+      }
+
+      table.comparison-table th:nth-child(1),
+      table.comparison-table td:nth-child(1),
+      table.comparison-table th:nth-child(3),
+      table.comparison-table td:nth-child(3) {
+        display: none;
+      }
+
+      table.comparison-table th:nth-child(2),
+      table.comparison-table td:nth-child(2) {
+        width: 100%; 
+        text-align: left;
+      }
+
+      /* FOOTER MOBILE */
       footer {
         flex-direction: column;
         text-align: center;
@@ -308,28 +501,29 @@
         padding: 2rem;
       }
 
-      .footer-logo {
+      footer .footer-logo {
         flex-direction: column;
-        gap: 1rem;
+        align-items: center;
+        gap: 0.3rem;
+      }
+
+      footer .footer-logo img {
+        width: 120px;
       }
 
       .contact-icons {
+        flex-direction: column;
         align-items: center;
+        text-align: center;
+        gap: 1rem;
       }
 
-      table.comparison-table th,
-      table.comparison-table td {
-        font-size: 0.9rem;
-      }
-
-      .car-name {
-        font-size: 1.5rem;
-      }
-
-      table.comparison-table img {
-        width: 100px;
+      .social-icons {
+        justify-content: center;
+        gap: 1rem;
       }
     }
+
   </style>
 </head>
 <body>
@@ -350,6 +544,20 @@
         </div>
         <button class="btn-primary" onclick="window.location.href='Contact.html'">Get Started</button>
       </div>
+
+      <!-- Hamburger for mobile -->
+      <div class="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <!-- Mobile nav links -->
+      <div class="mobile-nav" id="mobileNav">
+        <a href="Home.html">Home</a>
+        <a href="Vanquish.html">Cars</a>
+        <a href="Compare.html">Compare</a>
+        <a href="Contact.html">Contact</a>
+      </div>
     </header>
 
     <!-- HERO SECTION -->
@@ -360,10 +568,8 @@
 
     <!-- COMPARISON BOX -->
     <div class="comparison-box">
-      <!-- Hero image for comparison -->
       <img src="Images/background image.jpg" alt="Hero Car" class="hero-car" />
 
-      <!-- Comparison Table -->
       <table class="comparison-table">
         <thead>
           <tr>
@@ -378,7 +584,7 @@
             <td><strong>01</strong></td>
             <td class="car-info">
               <h2 class="car-name">ASTON MARTIN: VANQUISH</h2>
-              <p class="car-desc">A grand tourer that blends British elegance with modern performance...</p>
+              <p class="car-desc mobile-short">A grand tourer that blends British elegance with modern performance, the Vanquish delivers breathtaking speed in hand-crafted luxury.</p>
             </td>
             <td>
               <figure>
@@ -393,7 +599,7 @@
             <td><strong>02</strong></td>
             <td class="car-info">
               <h2 class="car-name">FERRARI: SF90 SPIDER</h2>
-              <p class="car-desc">Ferrari's first plug-in hybrid convertible combines futuristic technology...</p>
+              <p class="car-desc mobile-short">Ferrari's first plug-in hybrid convertible combines futuristic technology with raw Italian passion, unleashing blistering performance with open-top exhilaration.</p>
             </td>
             <td>
               <figure>
@@ -408,7 +614,7 @@
             <td><strong>03</strong></td>
             <td class="car-info">
               <h2 class="car-name">LAMBORGHINI: TEMERARIO</h2>
-              <p class="car-desc">The Temerario is Lamborghini's boldest vision...</p>
+              <p class="car-desc mobile-short">The Temerario is Lamborghini's boldest vision, with a roaring V12 hybrid and sculpted lines that embody fearless design and uncompromising speed.</p>
             </td>
             <td>
               <figure>
@@ -423,12 +629,12 @@
             <td><strong>04</strong></td>
             <td class="car-info">
               <h2 class="car-name">MCLAREN: 750S</h2>
-              <p class="car-desc">Lightweight engineering and a twin-turbo V8 deliver explosive acceleration...</p>
+              <p class="car-desc mobile-short">Lightweight engineering and a twin-turbo V8 deliver explosive acceleration and razor-sharp handling, making the 750S a pure evolution of driving focus.</p>
             </td>
             <td>
               <figure>
                 <img src="mclaren/front mclaren 1.png" alt="McLaren 750S">
-                <figcaption>750s Front View</figcaption>
+                <figcaption>750S Front View</figcaption>
               </figure>
             </td>
           </tr>
@@ -460,5 +666,12 @@
       <span>Contact Information</span>
     </div>
   </footer>
+
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById('mobileNav');
+      nav.style.display = (nav.style.display === 'flex') ? 'none' : 'flex';
+    }
+  </script>
 </body>
 </html>
