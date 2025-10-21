@@ -3,16 +3,25 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact Us | Velocity</title>
+  <title>Contact Us</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="Images/favicon.png">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Anton&display=swap" rel="stylesheet">
 
   <style>
+    /* ===== GLOBAL RESET ===== */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+    }
+
+    img, video {
+      max-width: 100%;
+      display: block;
     }
 
     body {
@@ -29,7 +38,7 @@
       padding: 2rem 0 4rem 0;
     }
 
-    /* ===== HEADER SECTION WITH BLURRED BACKGROUND ===== */
+    /* ===== HEADER ===== */
     .header-bg {
       position: relative;
       width: 100%;
@@ -137,68 +146,84 @@
       font-family: 'Anton', sans-serif;
       font-size: 3.5rem;
       letter-spacing: 2px;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
     }
 
     /* ===== CONTACT SECTION ===== */
-    .contact-section {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end; 
-    flex-wrap: wrap;
-    margin-top: 4rem;
-    gap: 4rem; 
+    section.contact-section {
+      display: flex;
+      gap: 4rem; 
+      flex-wrap: wrap;
+      margin-top: 4rem;
+    }
+
+
+    .form-column {
+      flex: 0 0 40%;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
     }
 
     /* ===== FORM ===== */
-    .contact-form {
-    flex: 0 0 40%;
-    background: #b30000;
-    border-radius: 20px;
-    padding: 2rem;
-    align-self: flex-end;
+    article.contact-form {
+      background: rgba(179, 0, 0, 0.85);
+      border-radius: 20px;
+      padding: 3rem 2rem 2rem 2rem; 
+      box-shadow: 0 4px 12px rgba(255,0,0,0.3);
     }
 
-    .contact-form h2 {
-      font-family: 'Outfit', sans-serif;
+    article.contact-form h2 {
       font-weight: 600;
       font-size: 2.5rem;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
     }
 
-    .contact-form label {
+    article.contact-form fieldset {
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 10px;
+      padding: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    article.contact-form legend {
+      font-weight: 600;
+      font-size: 1.2rem;
+      padding: 0 0.5rem;
+    }
+
+    article.contact-form label {
       display: block;
       font-size: 1rem;
       font-weight: 500;
       margin-bottom: 0.3rem;
     }
 
-    .contact-form input,
-    .contact-form textarea {
-    width: 100%;
-    padding: 0.8rem;
-    margin-bottom: 1rem;
-    border: none;
-    border-radius: 6px;
-    background: rgba(255, 255, 255, 0.2);
-    color: #ffffff; 
-    font-size: 1rem;
-    font-family: 'Outfit', sans-serif;
+    article.contact-form input,
+    article.contact-form textarea {
+      width: 100%;
+      padding: 0.8rem;
+      margin-bottom: 1rem;
+      border: none;
+      border-radius: 6px;
+      background: rgba(255, 255, 255, 0.2);
+      color: #ffffff; 
+      font-size: 1rem;
     }
 
-    .contact-form input::placeholder,
-    .contact-form textarea::placeholder {
-    color: #f5f5f5; 
-    opacity: 0.5; 
-    font-weight: 5;
-    }
-
-    .contact-form textarea {
+    article.contact-form textarea {
       resize: none;
       height: 130px;
     }
 
-    .contact-form button {
-      width: 100%;
+    .buttons {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .buttons button {
+      width: 48%;
       background: #e52b2b;
       color: white;
       font-weight: 600;
@@ -206,42 +231,50 @@
       border: none;
       border-radius: 25px;
       cursor: pointer;
-      transition: background 0.3s;
-      margin-top: 0.5rem;
+      transition: background 0.3s, transform 0.2s ease;
     }
 
-    .contact-form button:hover {
+    .buttons button:hover {
       background: #ff4040;
+      transform: scale(1.05);
     }
 
-    /* ===== CONTACT INFO ===== */
-    .contact-info {
+    /* ===== RIGHT COLUMN ===== */
+    .right-column {
       flex: 1;
       min-width: 350px;
       display: flex;
       flex-direction: column;
-      justify-content: space-between; 
+      gap: 2rem;
+      text-align: center;
+      padding-top: 1.5rem; 
     }
 
-    .contact-info p.intro {
-      color: #ddd;
-      margin-bottom: 2rem;
-      line-height: 1.6;
+    .form-intro {
+      color: rgba(221, 221, 221, 0.9);
       font-family: 'Outfit', sans-serif;
+      line-height: 1.6;
+      font-size: 1rem;
+      text-align: left;
     }
 
     .info-group {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 2rem;
-      text-align: center;
       margin-bottom: 2rem;
     }
 
+    .info-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
     .info-item img {
-    width: 28px;
-    height: auto;
-    margin-bottom: 0.4rem;
+      width: 28px;
+      height: auto;
+      margin-bottom: 0.5rem;
     }
 
     .info-item span {
@@ -249,7 +282,6 @@
       font-weight: 600;
       color: #fff;
       margin-bottom: 0.3rem;
-      font-family: 'Outfit', sans-serif;
     }
 
     .info-item p {
@@ -261,26 +293,28 @@
       width: 100%;
       border-radius: 15px;
       overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.4);
     }
 
     .map iframe {
       width: 100%;
-      height: 250px;
+      height: 355px;
       border: none;
     }
 
-    /* ===== VIDEO ===== */
-    .video-section {
+    /* ===== VIDEO SECTION ===== */
+    section.video-section {
       width: 100%;
       margin-top: 3rem;
       border-radius: 15px;
       overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
     }
 
-    .video-section iframe {
+    section.video-section video {
       width: 100%;
-      height: 400px;
-      border: none;
+      height: auto;
+      display: block;
     }
 
     /* ===== FOOTER ===== */
@@ -295,7 +329,6 @@
       border-top: 1px solid rgba(255, 255, 255, 0.15);
       font-size: 1rem;
       color: #ccc;
-      border-radius: 10px 10px 0 0;
     }
 
     footer .footer-logo {
@@ -311,8 +344,7 @@
     .contact-icons {
       display: flex;
       flex-direction: column;
-      align-items: flex-end;
-      text-align: right;
+      align-items: center;
       gap: 0.8rem;
     }
 
@@ -332,10 +364,14 @@
       transform: scale(1.15);
     }
 
+    /* ===== RESPONSIVE ===== */
     @media (max-width: 900px) {
-      .contact-section {
+      section.contact-section {
         flex-direction: column;
-        align-items: center;
+      }
+
+      .info-group {
+        grid-template-columns: 1fr;
       }
 
       footer {
@@ -349,64 +385,75 @@
         flex-direction: column;
         gap: 1rem;
       }
-
-      .contact-icons {
-        align-items: center;
-      }
     }
   </style>
 </head>
 <body>
-    <!-- HEADER SECTION -->
-    <div class="header-bg">
+
+  <!-- HEADER SECTION -->
+  <div class="header-bg">
     <header>
-        <div class="logo">
+      <div class="logo">
         <img src="Images/velocity logo.png" alt="Velocity Logo" />
-        </div>
-        <div class="nav-right">
+      </div>
+      <div class="nav-right">
         <div class="nav-box">
-            <nav>
+          <nav>
             <a href="Home.html">Home</a>
             <a href="Vanquish.html">Cars</a>
             <a href="Compare.html">Compare</a>
             <a href="Contact.html" style="color: #aaa; font-weight: 600;">Contact</a>
-            </nav>
+          </nav>
         </div>
         <button class="btn-primary" onclick="window.location.href='Contact.html'">Get Started</button>
-        </div>
+      </div>
     </header>
 
     <div class="hero">
-        <h1>CONTACT US</h1>
+      <h1>CONTACT US</h1>
     </div>
-    </div>
+  </div>
 
+  <!-- MAIN CONTAINER -->
   <div class="container">
-    <!-- CONTACT SECTION -->
-    <div class="contact-section">
-      <!-- FORM -->
-      <div class="contact-form">
-        <h2>Get In Touch</h2>
-        <form>
-          <label for="name">Name</label>
-          <input type="text" id="name" placeholder="Your Name" required />
-          <label for="email">Email</label>
-          <input type="email" id="email" placeholder="yourname@gmail.com" required />
-          <label for="subject">Subject</label>
-          <input type="text" id="subject" placeholder="Title" required />
-          <label for="message">Message</label>
-          <textarea id="message" placeholder="Type Here..." required></textarea>
-          <button type="submit">Send Now</button>
-        </form>
+    <section class="contact-section">
+
+      <!-- LEFT COLUMN: FORM -->
+      <div class="form-column">
+        <article class="contact-form">
+          <h2>Get In Touch</h2>
+          <form>
+            <fieldset>
+              <legend>Personal Info</legend>
+              <label for="name">Name</label>
+              <input type="text" id="name" placeholder="Your Name" required />
+              <label for="email">Email</label>
+              <input type="email" id="email" placeholder="yourname@gmail.com" required />
+            </fieldset>
+            <fieldset>
+              <legend>Message Details</legend>
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" placeholder="Title" required />
+              <label for="message">Message</label>
+              <textarea id="message" placeholder="Type Here..." required></textarea>
+            </fieldset>
+            <div class="buttons">
+              <button type="submit">Submit</button>
+              <button type="reset">Reset</button>
+            </div>
+          </form>
+        </article>
       </div>
 
-      <!-- CONTACT INFO -->
-      <div class="contact-info">
-        <p class="intro">
-          At Velocity, we're passionate about bringing you the best car brands all in one place.
-          Whether you have a question about our vehicles, need help finding the right model,
-          or want to book a test drive, our team is here to help.
-        </p>
+      <!-- RIGHT COLUMN: Intro + Contact Info + Map -->
+      <div class="right-column">
+        <div class="form-intro">
+          <p>
+            At Velocity, we're passionate about bringing you the best car brands all in one place.
+            Whether you have a question about our vehicles, need help finding the right model,
+            or want to book a test drive, our team is here to help.
+          </p>
+        </div>
 
         <div class="info-group">
           <div class="info-item">
@@ -431,25 +478,27 @@
           </div>
         </div>
 
-        <!-- GOOGLE MAP -->
         <div class="map">
           <iframe 
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3302.182332241252!2d-118.40199392458342!3d34.07362007315102!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2beb4a9e1d833%3A0x2f7e6e2ebeb7b945!2sBeverly%20Hills%2C%20CA%2090210%2C%20USA!5e0!3m2!1sen!2sus!4v1716079044092!5m2!1sen!2sus"
             allowfullscreen
-            loading="lazy">
+            loading="lazy"
+            title="Beverly Hills Location">
           </iframe>
         </div>
       </div>
-    </div>
+    </section>
 
-    <!-- VIDEO -->
-    <div class="video-section">
-      <iframe
-        src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-        title="Velocity Showroom Tour"
-        allowfullscreen>
-      </iframe>
-    </div>
+    <!-- VIDEO SECTION -->
+    <section class="video-section">
+      <video controls poster="Images/poster.jpg">
+        <source src="media/filename.mp4" type="video/mp4" />
+        <source src="media/filename.webm" type="video/webm" />
+        <track src="media/captions.vtt" kind="subtitles" srclang="en" label="English" default />
+        <track src="media/descriptions.vtt" kind="descriptions" srclang="en" label="English" />
+        Your browser does not support the video tag.
+      </video>
+    </section>
   </div>
 
   <!-- FOOTER -->
