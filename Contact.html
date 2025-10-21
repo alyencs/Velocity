@@ -157,7 +157,6 @@
       margin-top: 4rem;
     }
 
-
     .form-column {
       flex: 0 0 40%;
       display: flex;
@@ -217,7 +216,6 @@
       resize: none;
       height: 130px;
     }
-
 
     .buttons {
       display: flex;
@@ -297,7 +295,7 @@
       border-radius: 20px; 
       overflow: hidden;
       box-shadow: 0 10px 25px rgba(255, 0, 0, 0.2); 
-      border: 2px solid rgba(255, 0, 0, 0.5); 
+      border: 2px solid rgba(255, 0, 0, 0.5);
     }
 
     .map iframe {
@@ -388,16 +386,190 @@
       transform: scale(1.15);
     }
 
+    /* ===== MOBILE HAMBURGER ===== */
+    .hamburger {
+      display: none;
+      width: 24px;
+      height: 20px;
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      flex-direction: column;
+      justify-content: space-between;
+      cursor: pointer;
+      z-index: 300;
+    }
+
+    .hamburger span {
+      display: block;
+      height: 2.5px;
+      width: 100%;
+      background: white;
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+
+    .mobile-nav {
+      display: none;
+      flex-direction: column;
+      gap: 0.8rem;
+      background: rgba(0,0,0,0.85);
+      padding: 1rem 1.5rem;
+      border-radius: 10px;
+      position: absolute;
+      top: 70px;
+      right: 5%;
+      z-index: 200;
+    }
+
+    .mobile-nav a {
+      color: #fff;
+      font-weight: 600;
+      text-align: center;
+      padding: 0.5rem 0;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .mobile-nav a:hover {
+      color: #ccc;
+    }
+
     /* ===== RESPONSIVE ===== */
-    @media (max-width: 900px) {
-      section.contact-section {
+    /* DESKTOP */
+    @media (min-width: 1025px) {
+    }
+
+    /* TABLET */
+    @media (max-width: 1024px) and (min-width: 481px) {
+      header {
         flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .logo {
+        order: -1;
+        margin-bottom: 1rem;
+      }
+
+      .nav-right {
+        justify-content: center;
+        width: 100%;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+
+      .form-column {
+        flex: 0 0 90%;
+        margin: 0 auto;
+      }
+
+      .right-column {
+        flex: 1 1 90%;
+        margin: 0 auto;
+        text-align: center;
+        padding-top: 0.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+      }
+
+      .form-intro {
+        order: 0;
+        width: 90%;
+        text-align: center;
+        margin: 0 auto; 
+        padding-bottom: 3%;
       }
 
       .info-group {
-        grid-template-columns: 1fr;
+        order: 1;
+        width: 95%;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        justify-items: center;
+        margin: 0 auto;
+        padding-bottom: 3%;
       }
 
+      .map {
+        order: 2;
+        width: 90%;
+        margin: 0 auto;
+        margin-top: 1rem;
+      }
+
+      .video-section {
+        display: none;
+      }
+    }
+    
+    /* MOBILE */
+    @media (max-width: 480px) {
+      .logo img {
+        width: 120px;
+      }
+
+      .nav-box,
+      .btn-primary {
+        display: none;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      .form-column {
+        flex: 0 0 90%;
+        margin: 0 auto;
+      }
+
+      .right-column {
+        flex: 1 1 90%;
+        margin: 0 auto;
+        text-align: center;
+        padding-top: 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .form-intro {
+        order: 0;
+        width: 90%;
+        text-align: center;
+        margin: 0 auto;
+        padding-bottom: 3%;
+      }
+
+      .info-group {
+        order: 1;
+        width: 90%;
+        margin: 0 auto;
+        grid-template-columns: repeat(2, 1fr);
+        justify-items: center;
+        padding-bottom: 3%;
+      }
+
+      .map {
+        order: 2;
+        width: 90%;
+        margin: 0 auto;
+        margin-top: 1rem;
+      }
+
+      .video-section {
+        display: none;
+      }
+
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+
+      /* FOOTER MOBILE */
       footer {
         flex-direction: column;
         text-align: center;
@@ -405,12 +577,37 @@
         padding: 2rem;
       }
 
-      .footer-logo {
+      footer .footer-logo {
         flex-direction: column;
+        align-items: center;
+        gap: 0.3rem;
+      }
+
+      footer .footer-logo img {
+        width: 120px;
+      }
+
+      .contact-icons {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 1rem;
+      }
+
+      .social-icons {
+        justify-content: center;
         gap: 1rem;
       }
     }
+    
   </style>
+
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById('mobileNav');
+      nav.style.display = (nav.style.display === 'flex') ? 'none' : 'flex';
+    }
+  </script>
 </head>
 <body>
 
@@ -420,6 +617,7 @@
       <div class="logo">
         <img src="Images/velocity logo.png" alt="Velocity Logo" />
       </div>
+
       <div class="nav-right">
         <div class="nav-box">
           <nav>
@@ -430,6 +628,21 @@
           </nav>
         </div>
         <button class="btn-primary" onclick="window.location.href='Contact.html'">Get Started</button>
+      </div>
+
+      <!-- Hamburger for mobile -->
+      <div class="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <!-- Mobile nav links -->
+      <div class="mobile-nav" id="mobileNav">
+        <a href="Home.html">Home</a>
+        <a href="Vanquish.html">Cars</a>
+        <a href="Compare.html">Compare</a>
+        <a href="Contact.html">Contact</a>
       </div>
     </header>
 
@@ -442,7 +655,7 @@
   <div class="container">
     <section class="contact-section">
 
-      <!-- LEFT COLUMN: FORM -->
+      <!-- LEFT COLUMN -->
       <div class="form-column">
         <article class="contact-form">
           <h2>Get In Touch</h2>
@@ -469,14 +682,10 @@
         </article>
       </div>
 
-      <!-- RIGHT COLUMN: Intro + Contact Info + Map -->
+      <!-- RIGHT COLUMN -->
       <div class="right-column">
         <div class="form-intro">
-          <p>
-            At Velocity, we're passionate about bringing you the best car brands all in one place.
-            Whether you have a question about our vehicles, need help finding the right model,
-            or want to book a test drive, our team is here to help.
-          </p>
+          <p>At Velocity, we're passionate about bringing you the best car brands all in one place. Whether you have a question about our vehicles, need help finding the right model, or want to book a test drive, our team is here to help. Reach out to us today—we'd love to hear from you!</p>
         </div>
 
         <div class="info-group">
@@ -532,13 +741,20 @@
     </div>
     <div class="contact-icons">
       <div class="social-icons">
-        <img src="Images/phone-icon.png" alt="Phone Icon" />
-        <img src="Images/email-icon.png" alt="Email Icon" />
-        <img src="Images/whatsapp-icon.png" alt="WhatsApp Icon" />
-        <img src="Images/location-icon.png" alt="Location Icon" />
+        <a href="Contact.html"><img src="Images/phone-icon.png" alt="Phone Icon" /></a>
+        <a href="Contact.html"><img src="Images/email-icon.png" alt="Email Icon" /></a>
+        <a href="Contact.html"><img src="Images/whatsapp-icon.png" alt="WhatsApp Icon" /></a>
+        <a href="Contact.html"><img src="Images/location-icon.png" alt="Location Icon" /></a>
       </div>
       <span>Contact Information</span>
     </div>
   </footer>
+
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById('mobileNav');
+      nav.style.display = (nav.style.display === 'flex') ? 'none' : 'flex';
+    }
+  </script>  
 </body>
 </html>

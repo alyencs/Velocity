@@ -382,18 +382,15 @@
         color: #000;
       }
 
-      /* Hide header, buttons, hero image, hamburger, and footer */
       header, .btn-primary, .hamburger, .mobile-nav, .hero, footer {
         display: none !important;
       }
 
-      /* Remove background images */
       body::before, .comparison-box {
         background: none !important;
         box-shadow: none !important;
       }
 
-      /* Comparison box table formatting */
       .comparison-box {
         padding: 0;
         border: none;
@@ -457,19 +454,6 @@
 
       .hamburger {
         display: flex;
-        width: 24px;
-        height: 20px;
-        position: absolute;
-        right: 20px;
-        top: 50%;
-        transform: translateY(-50%);
-        flex-direction: column;
-        justify-content: space-between;
-        z-index: 300;
-      }
-
-      .hamburger span {
-        height: 2.5px;
       }
 
       .hero h1 {
@@ -551,6 +535,7 @@
         <span></span>
         <span></span>
       </div>
+
       <!-- Mobile nav links -->
       <div class="mobile-nav" id="mobileNav">
         <a href="Home.html">Home</a>
@@ -658,10 +643,10 @@
     </div>
     <div class="contact-icons">
       <div class="social-icons">
-        <img src="Images/phone-icon.png" alt="Phone Icon" />
-        <img src="Images/email-icon.png" alt="Email Icon" />
-        <img src="Images/whatsapp-icon.png" alt="WhatsApp Icon" />
-        <img src="Images/location-icon.png" alt="Location Icon" />
+        <a href="Contact.html"><img src="Images/phone-icon.png" alt="Phone Icon" /></a>
+        <a href="Contact.html"><img src="Images/email-icon.png" alt="Email Icon" /></a>
+        <a href="Contact.html"><img src="Images/whatsapp-icon.png" alt="WhatsApp Icon" /></a>
+        <a href="Contact.html"><img src="Images/location-icon.png" alt="Location Icon" /></a>
       </div>
       <span>Contact Information</span>
     </div>

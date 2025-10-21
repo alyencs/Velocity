@@ -444,10 +444,59 @@
       transform: scale(1.15);
     }
 
+    /* ===== MOBILE HAMBURGER ===== */
+    .hamburger {
+      display: none;
+      width: 24px;
+      height: 20px;
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      flex-direction: column;
+      justify-content: space-between;
+      cursor: pointer;
+      z-index: 300;
+    }
+
+    .hamburger span {
+      display: block;
+      height: 2.5px;
+      width: 100%;
+      background: white;
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+
+    .mobile-nav {
+      display: none;
+      flex-direction: column;
+      gap: 0.8rem;
+      background: rgba(0,0,0,0.85);
+      padding: 1rem 1.5rem;
+      border-radius: 10px;
+      position: absolute;
+      top: 70px;
+      right: 5%;
+      z-index: 200;
+    }
+
+    .mobile-nav a {
+      color: #fff;
+      font-weight: 600;
+      text-align: center;
+      padding: 0.5rem 0;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .mobile-nav a:hover {
+      color: #ccc;
+    }
+
     /* ===== RESPONSIVE ===== */
-    /* ===== DESKTOP ===== */
+    /* DESKTOP */
     @media (min-width: 1025px) {
-    /* Desktop-specific tweaks (if needed) */
     .hero-text h1 { font-size: 3.4rem; }
     .hero-images img:nth-child(1) { height: 280px; }
     .brand-buttons a { width: 220px; padding: 1.8rem 2.5rem; }
@@ -640,22 +689,8 @@
         display: none;
       }
 
-      /* HAMBURGER */
       .hamburger {
         display: flex;
-        width: 24px;
-        height: 20px;
-        position: absolute;
-        right: 20px;
-        top: 50%;
-        transform: translateY(-50%);
-        flex-direction: column;
-        justify-content: space-between;
-        z-index: 300;
-      }
-
-      .hamburger span {
-        height: 2.5px;
       }
 
       .hero-images {
@@ -680,15 +715,18 @@
         grid-template-columns: 1fr !important;
       }
 
-      .service-row.row-1 .service-box,
+      .service-row.row-1 .service-box {
+        border-radius: 60px 0 0 0;
+        height: auto;
+      }
+
       .service-row.row-2 .service-box {
-        border-radius: 15px;
+        border-radius: 0 0 60px 0;
         height: auto;
       }
 
       .service-img {
         height: auto;
-        border-radius: 15px;
       }
 
       .hero {
@@ -772,6 +810,7 @@
       <button class="btn-primary" onclick="window.location.href='Contact.html'">Get Started</button>
     </div>
 
+    <!-- Mobile nav links -->
     <div class="mobile-nav" id="mobileNav">
       <a href="Home.html">Home</a>
       <a href="Vanquish.html">Cars</a>
@@ -860,10 +899,10 @@
 
     <div class="contact-icons">
       <div class="social-icons">
-        <img src="Images/phone-icon.png" alt="Phone">
-        <img src="Images/email-icon.png" alt="Email">
-        <img src="Images/whatsapp-icon.png" alt="WhatsApp">
-        <img src="Images/location-icon.png" alt="Location">
+        <a href="Contact.html"><img src="Images/phone-icon.png" alt="Phone Icon" /></a>
+        <a href="Contact.html"><img src="Images/email-icon.png" alt="Email Icon" /></a>
+        <a href="Contact.html"><img src="Images/whatsapp-icon.png" alt="WhatsApp Icon" /></a>
+        <a href="Contact.html"><img src="Images/location-icon.png" alt="Location Icon" /></a>
       </div>
       <span>Contact Information</span>
     </div>
