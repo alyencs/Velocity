@@ -134,6 +134,7 @@ nav a:hover {
   font-weight: 700;
   cursor: pointer;
   transition: 0.3s;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6);  
 }
 
 .hero-text button:hover {
@@ -155,6 +156,7 @@ nav a:hover {
   border-radius: 25px;
   object-fit: cover;
   border: 1px solid #fff;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6);
 }
 
 .hero-images img:nth-child(1) {
@@ -185,7 +187,7 @@ nav.brand-buttons {
   justify-content: center;
   gap: 1.2rem;
   margin: 5rem 0 2rem;
-  flex-wrap: wrap;
+  flex-wrap: wrap;  
 }
 
 nav.brand-buttons a {
@@ -202,6 +204,7 @@ nav.brand-buttons a {
   color: #fff;
   font-weight: 500;
   transition: 0.3s;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6);
 }
 
 nav.brand-buttons a:hover {
@@ -286,7 +289,7 @@ article.car-card p {
 /* SERVICES */
 section.services {
   margin-top: 5rem;
-  text-align: center;
+  text-align: center;  
 }
 
 section.services h2 {
@@ -319,6 +322,7 @@ article.service-row.row-2 {
   border: 1px solid #fff;
   height: 400px;
   text-align: left;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6);
 }
 
 .service-box h3 {
@@ -349,6 +353,7 @@ article.service-row.row-2 {
   border-radius: 0;
   border: 1px solid #fff;
   height: 400px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6);
 }
 
 /* FOOTER */
@@ -524,7 +529,7 @@ footer .footer-logo img {
   }
 
   .hero-images img:nth-child(2) {
-    height: 180px;
+    height: 185px;
   }
 
   .hero-images img:nth-child(3) {
@@ -532,8 +537,8 @@ footer .footer-logo img {
   }
 
   .hero-images img:nth-child(4) {
-    height: 230px;
-    top: -15px;
+    height: 224px;
+    top: -14px;
     position: relative;
   }
 }
@@ -622,6 +627,7 @@ footer .footer-logo img {
     display: block;
     margin: 1rem auto;
     width: 80%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6);
   }
 
   article.service-row {
@@ -699,15 +705,18 @@ footer .footer-logo img {
   .service-row.row-1 .service-box {
     border-radius: 60px 0 0 0;
     height: auto;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6);
   }
 
   .service-row.row-2 .service-box {
     border-radius: 0 0 60px 0;
     height: auto;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6);
   }
 
   .service-img {
     height: auto;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6);
   }
 
   .hero {
