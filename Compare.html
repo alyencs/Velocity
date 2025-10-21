@@ -23,6 +23,7 @@
       scroll-behavior: smooth;
     }
 
+    /* ===== BODY STYLES ===== */
     body {
       font-family: 'Outfit', sans-serif;
       background-color: #000;
@@ -53,6 +54,7 @@
       z-index: 1;
     }
 
+    /* ===== HEADER ===== */
     header {
       display: flex;
       align-items: center;
@@ -110,6 +112,7 @@
       transform: scale(1.05);
     }
 
+    /* ===== HERO SECTION ===== */
     .hero {
       text-align: center;
       margin-top: 7rem;
@@ -129,6 +132,7 @@
       margin-top: 0.5rem;
     }
 
+    /* ===== COMPARISON BOX ===== */
     .comparison-box {
       background: rgba(0,0,0,0.55);
       border-radius: 20px;
@@ -150,6 +154,7 @@
       opacity: 0.95;
     }
 
+    /* ===== COMPARISON TABLE ===== */
     table.comparison-table {
       width: 100%;
       border-collapse: collapse;
@@ -234,7 +239,6 @@
       font-size: 1rem;
     }
 
-    /* FIGURE & FIGCAPTION */
     table.comparison-table figure {
       margin: 0;
     }
@@ -247,6 +251,7 @@
       font-style: italic;
     }
 
+    /* ===== FOOTER ===== */
     footer {
       background-color: #252525;
       width: 100%;
@@ -294,6 +299,7 @@
       transform: scale(1.15);
     }
 
+    /* ===== RESPONSIVE ===== */
     @media (max-width: 768px) {
       footer {
         flex-direction: column;
@@ -328,6 +334,7 @@
 </head>
 <body>
   <div class="container">
+    <!-- HEADER -->
     <header>
       <div class="logo">
         <img src="Images/velocity logo.png" alt="Velocity Logo" />
@@ -345,13 +352,18 @@
       </div>
     </header>
 
+    <!-- HERO SECTION -->
     <section class="hero">
       <h1>CAR COMPARISON</h1>
       <p>Compare your favorite cars here!</p>
     </section>
 
+    <!-- COMPARISON BOX -->
     <div class="comparison-box">
+      <!-- Hero image for comparison -->
       <img src="Images/background image.jpg" alt="Hero Car" class="hero-car" />
+
+      <!-- Comparison Table -->
       <table class="comparison-table">
         <thead>
           <tr>
@@ -361,11 +373,12 @@
           </tr>
         </thead>
         <tbody>
+          <!-- Row 1: Aston Martin -->
           <tr>
             <td><strong>01</strong></td>
             <td class="car-info">
               <h2 class="car-name">ASTON MARTIN: VANQUISH</h2>
-              <p class="car-desc">A grand tourer that blends British elegance with modern performance, the Vanquish delivers breathtaking speed in hand-crafted luxury. Its presence on the road is both commanding and refined.</p>
+              <p class="car-desc">A grand tourer that blends British elegance with modern performance...</p>
             </td>
             <td>
               <figure>
@@ -375,11 +388,12 @@
             </td>
           </tr>
 
+          <!-- Row 2: Ferrari -->
           <tr>
             <td><strong>02</strong></td>
             <td class="car-info">
               <h2 class="car-name">FERRARI: SF90 SPIDER</h2>
-              <p class="car-desc">Ferrari's first plug-in hybrid convertible combines futuristic technology with raw Italian passion, unleashing blistering performance with open-top exhilaration. It redefines supercar innovation while staying true to Ferrari’s racing spirit.</p>
+              <p class="car-desc">Ferrari's first plug-in hybrid convertible combines futuristic technology...</p>
             </td>
             <td>
               <figure>
@@ -389,11 +403,12 @@
             </td>
           </tr>
 
+          <!-- Row 3: Lamborghini -->
           <tr>
             <td><strong>03</strong></td>
             <td class="car-info">
               <h2 class="car-name">LAMBORGHINI: TEMERARIO</h2>
-              <p class="car-desc">The Temerario is Lamborghini's boldest vision, with a roaring V12 hybrid and sculpted lines that embody fearless design and uncompromising speed. Built for dominance, it pushes the boundaries of what a modern supercar can be.</p>
+              <p class="car-desc">The Temerario is Lamborghini's boldest vision...</p>
             </td>
             <td>
               <figure>
@@ -403,11 +418,12 @@
             </td>
           </tr>
 
+          <!-- Row 4: McLaren -->
           <tr>
             <td><strong>04</strong></td>
             <td class="car-info">
               <h2 class="car-name">MCLAREN: 750S</h2>
-              <p class="car-desc">Lightweight engineering and a twin-turbo V8 deliver explosive acceleration and razor-sharp handling, making the 750S a pure evolution of driving focus. Every detail is honed for drivers who demand both precision and passion.</p>
+              <p class="car-desc">Lightweight engineering and a twin-turbo V8 deliver explosive acceleration...</p>
             </td>
             <td>
               <figure>
@@ -417,6 +433,7 @@
             </td>
           </tr>
 
+          <!-- Notes row -->
           <tr class="notes-row">
             <td colspan="3">
               All specifications are approximate and may vary by model year and region. Check official sources for detailed information.
@@ -427,6 +444,7 @@
     </div>
   </div>
 
+  <!-- FOOTER -->
   <footer>
     <div class="footer-logo">
       <img src="Images/velocity logo v2.png" alt="Velocity Logo" />
