@@ -255,22 +255,57 @@
     }
 
     header {
-      padding: 0 1rem;
-      gap: 0.5rem;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1.2rem;
+      text-align: center;
+    }
+
+    .logo {
+      order: -1;
+      text-align: center;
     }
 
     .logo img {
       width: 180px;
     }
 
+    .nav-right {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .nav-box {
+      display: flex;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 0.6rem 1.5rem;
+      border-radius: 8px;
+    }
+
     nav a {
-      font-size: 0.9rem;
+      font-size: 0.95rem;
       margin: 0 0.8rem;
     }
 
     .btn-primary {
-      padding: 0.6rem 1.2rem;
-      font-size: 0.9rem;
+      background: linear-gradient(90deg, #7c7c7c, #ffffff);
+      color: black;
+      border: none;
+      padding: 0.6rem 1.3rem;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .btn-primary:hover {
+      transform: scale(1.05);
     }
 
     .hero .intro {
@@ -280,7 +315,7 @@
 
     .title {
       font-size: 10rem;
-      top: 14%;
+      top: 15%;
     }
 
     .car-display {
