@@ -5,10 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Car Comparison</title>
 
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="Images/favicon.png">
+    
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Anton&display=swap" rel="stylesheet">
 
   <style>
+    /* ===== GLOBAL RESET ===== */    
     * {
       margin: 0;
       padding: 0;
@@ -28,7 +32,6 @@
       position: relative;
     }
 
-    /* ===== BACKGROUND IMAGE ===== */
     body::before {
       content: "";
       position: fixed;
@@ -36,7 +39,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: #000 url("Images/background image.jpg") no-repeat center center / cover;
+      background: rgba(0,0,0,0.7) url("Images/background image.jpg") no-repeat center center / cover;
       filter: blur(10px) brightness(0.6);
       z-index: -1;
     }
@@ -50,7 +53,6 @@
       z-index: 1;
     }
 
-    /* ===== HEADER ===== */
     header {
       display: flex;
       align-items: center;
@@ -108,7 +110,6 @@
       transform: scale(1.05);
     }
 
-    /* ===== HERO ===== */
     .hero {
       text-align: center;
       margin-top: 7rem;
@@ -119,20 +120,20 @@
       font-family: 'Anton', sans-serif;
       font-size: 3rem;
       letter-spacing: 2px;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
     }
 
     .hero p {
-      color: #ddd;
+      color: rgba(221,221,221,0.9);
       font-size: 1.1rem;
       margin-top: 0.5rem;
     }
 
-    /* ===== COMPARISON BOX ===== */
     .comparison-box {
       background: rgba(0,0,0,0.55);
       border-radius: 20px;
       padding: 2rem;
-      border: 1px solid white;
+      border: 1px solid rgba(255,255,255,0.3);
       box-shadow: 0 0 25px rgba(255,50,50,0.08);
       backdrop-filter: blur(8px);
       overflow-x: auto;
@@ -146,9 +147,9 @@
       margin-bottom: 2rem;
       object-fit: cover;
       display: block;
+      opacity: 0.95;
     }
 
-    /* ===== COMPARISON TABLE ===== */
     table.comparison-table {
       width: 100%;
       border-collapse: collapse;
@@ -186,7 +187,6 @@
       padding-right: 2rem;
     }
 
-    /* ===== CAR INFO ===== */
     .car-info {
       text-align: left;
       padding-left: 1.5rem;
@@ -207,7 +207,7 @@
     }
 
     table.comparison-table td:nth-child(3) {
-      text-align: center; /* center the images */
+      text-align: center;
     }
 
     table.comparison-table img {
@@ -224,7 +224,6 @@
       background: rgba(255,255,255,0.05);
     }
 
-    /* ===== NOTES ROW ===== */
     .notes-row td {
       background: rgba(255,255,255,0.1);
       color: #fff;
@@ -235,7 +234,19 @@
       font-size: 1rem;
     }
 
-    /* ===== FOOTER ===== */
+    /* FIGURE & FIGCAPTION */
+    table.comparison-table figure {
+      margin: 0;
+    }
+
+    table.comparison-table figcaption {
+      margin-top: 0.5rem;
+      font-size: 0.9rem;
+      color: rgba(221, 221, 221, 0.8);
+      text-align: center;
+      font-style: italic;
+    }
+
     footer {
       background-color: #252525;
       width: 100%;
@@ -283,7 +294,6 @@
       transform: scale(1.15);
     }
 
-    /* ===== RESPONSIVE ===== */
     @media (max-width: 768px) {
       footer {
         flex-direction: column;
@@ -314,11 +324,9 @@
         width: 100px;
       }
     }
-
   </style>
 </head>
 <body>
-  <!-- HEADER SECTION -->
   <div class="container">
     <header>
       <div class="logo">
@@ -337,13 +345,11 @@
       </div>
     </header>
 
-    <!-- HERO SECTION -->
     <section class="hero">
       <h1>CAR COMPARISON</h1>
       <p>Compare your favorite cars here!</p>
     </section>
 
-    <!-- COMPARISON TABLE SECTION -->
     <div class="comparison-box">
       <img src="Images/background image.jpg" alt="Hero Car" class="hero-car" />
       <table class="comparison-table">
@@ -361,34 +367,56 @@
               <h2 class="car-name">ASTON MARTIN: VANQUISH</h2>
               <p class="car-desc">A grand tourer that blends British elegance with modern performance, the Vanquish delivers breathtaking speed in hand-crafted luxury. Its presence on the road is both commanding and refined.</p>
             </td>
-            <td><img src="aston martin/front am 1.png" alt="Aston Martin Vanquish"></td>
+            <td>
+              <figure>
+                <img src="aston martin/front am 1.png" alt="Aston Martin Vanquish">
+                <figcaption>Vanquish Front View</figcaption>
+              </figure>
+            </td>
           </tr>
+
           <tr>
             <td><strong>02</strong></td>
             <td class="car-info">
               <h2 class="car-name">FERRARI: SF90 SPIDER</h2>
               <p class="car-desc">Ferrari's first plug-in hybrid convertible combines futuristic technology with raw Italian passion, unleashing blistering performance with open-top exhilaration. It redefines supercar innovation while staying true to Ferrari’s racing spirit.</p>
             </td>
-            <td><img src="ferrari/ferrari front 1.png" alt="Ferrari SF90 Spider"></td>
+            <td>
+              <figure>
+                <img src="ferrari/ferrari front 1.png" alt="Ferrari SF90 Spider">
+                <figcaption>SF90 Spider Front View</figcaption>
+              </figure>
+            </td>
           </tr>
+
           <tr>
             <td><strong>03</strong></td>
             <td class="car-info">
               <h2 class="car-name">LAMBORGHINI: TEMERARIO</h2>
               <p class="car-desc">The Temerario is Lamborghini's boldest vision, with a roaring V12 hybrid and sculpted lines that embody fearless design and uncompromising speed. Built for dominance, it pushes the boundaries of what a modern supercar can be.</p>
             </td>
-            <td><img src="lamborghini/lambo front.png" alt="Lamborghini Temerario"></td>
+            <td>
+              <figure>
+                <img src="lamborghini/lambo front.png" alt="Lamborghini Temerario">
+                <figcaption>Temerario Front View</figcaption>
+              </figure>
+            </td>
           </tr>
+
           <tr>
             <td><strong>04</strong></td>
             <td class="car-info">
               <h2 class="car-name">MCLAREN: 750S</h2>
               <p class="car-desc">Lightweight engineering and a twin-turbo V8 deliver explosive acceleration and razor-sharp handling, making the 750S a pure evolution of driving focus. Every detail is honed for drivers who demand both precision and passion.</p>
             </td>
-            <td><img src="mclaren/front mclaren 1.png" alt="McLaren 750S"></td>
+            <td>
+              <figure>
+                <img src="mclaren/front mclaren 1.png" alt="McLaren 750S">
+                <figcaption>750s Front View</figcaption>
+              </figure>
+            </td>
           </tr>
 
-          <!-- NOTES ROW SECTION -->
           <tr class="notes-row">
             <td colspan="3">
               All specifications are approximate and may vary by model year and region. Check official sources for detailed information.
@@ -399,7 +427,6 @@
     </div>
   </div>
 
-  <!-- FOOTER SECTION -->
   <footer>
     <div class="footer-logo">
       <img src="Images/velocity logo v2.png" alt="Velocity Logo" />
