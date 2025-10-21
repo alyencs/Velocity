@@ -98,24 +98,39 @@
       align-items: center;
     }
 
-    .intro {
-      max-width: 1000px;
-      color: #ccc;
-      font-size: 1rem;
-      line-height: 1.6;
-      margin-top: 3rem;
+    .hero-text {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
     .title {
       font-family: 'Anton', sans-serif;
-      font-size: 12.5rem;
+      font-size: 12rem;
       font-weight: 900;
       color: white;
       letter-spacing: 8px;
       position: absolute;
-      top: 9%;
+      top: 11%;
       z-index: 0;
       pointer-events: none;
+    }
+
+    /* Intro visibility */
+    .desktop-intro {
+      display: block !important;
+    }
+
+    .mobile-intro {
+      display: none !important;
+    }
+
+    .intro {
+      max-width: 850px;
+      color: #ccc;
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-top: 2.2rem;
     }
 
     /* CAR DISPLAY */
@@ -128,8 +143,8 @@
     }
 
     .car-image img {
-      width: 100%;
-      max-width: 990px;
+      width: 110%;
+      max-width: 1030px;
       z-index: 2;
       filter: drop-shadow(0 10px 35px rgba(0, 0, 0, 0.8));
       transition: all 0.6s ease;
@@ -239,6 +254,56 @@
     transition: opacity 0.4s ease, transform 0.4s ease;
     }
 
+    /* ===== MOBILE HAMBURGER ===== */
+    .hamburger {
+      display: none;
+      width: 24px;
+      height: 20px;
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      flex-direction: column;
+      justify-content: space-between;
+      cursor: pointer;
+      z-index: 300;
+    }
+
+    .hamburger span {
+      display: block;
+      height: 2.5px;
+      width: 100%;
+      background: white;
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+
+    .mobile-nav {
+      display: none;
+      flex-direction: column;
+      gap: 0.8rem;
+      background: rgba(0,0,0,0.85);
+      padding: 1rem 1.5rem;
+      border-radius: 10px;
+      position: absolute;
+      top: 70px;
+      right: 5%;
+      z-index: 200;
+    }
+
+    .mobile-nav a {
+      color: #fff;
+      font-weight: 600;
+      text-align: center;
+      padding: 0.5rem 0;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .mobile-nav a:hover {
+      color: #ccc;
+    }    
+
   /* ===== RESPONSIVE ===== */
   /* DESKTOP */
   @media (min-width: 1025px) {
@@ -309,13 +374,13 @@
     }
 
     .hero .intro {
-      max-width: 650px;
+      max-width: 690px;
       font-size: 0.9rem;
     }
 
     .title {
       font-size: 10rem;
-      top: 15%;
+      top: 14%;
     }
 
     .car-display {
@@ -462,7 +527,167 @@
       font-size: 7rem !important; 
       top: 15%;
     }    
-  }    
+  }  
+
+  /* MOBILE */
+  @media (max-width: 480px) {
+    .container {
+      padding: 1rem 1.5rem;
+    }
+
+    header {
+      flex-direction: column;
+      position: relative; 
+      align-items: flex-start;
+      justify-content: flex-start;
+    }
+
+    .nav-box,
+    .btn-primary {
+      display: none;
+    }
+
+    .hamburger {
+      display: flex;
+    }        
+
+    .nav-right {
+      display: none;
+    }
+
+    .logo {
+      margin-top: 1.5rem; 
+    }    
+
+    .logo img {
+      width: 170px;
+      display: block;
+    }
+
+    .title {
+      position: static !important;
+      font-size: 2.5rem;
+      margin: 0rem 0 0.3rem 0;
+      text-align: left;
+      padding-left: 1rem;
+      letter-spacing: 0.6px;
+    }
+
+    .hero-text {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .desktop-intro {
+      display: none !important;
+    }
+
+    .mobile-intro {
+      display: block !important;
+      font-size: 0.65rem;
+      margin: 0 0 1.5rem 0;
+      text-align: left;
+      padding-left: 1rem;
+    }
+
+    .car-display {
+      justify-content: flex-end;
+      margin-top: 1rem;
+    }
+
+    .car-image img {
+      width: 150%;
+      max-width: none;
+      object-fit: cover;
+      transform: translateX(2%);
+      position: relative;
+      top: -110px;
+    }
+
+    .color-options {
+      position: absolute;
+      left: 20px;
+      top: 60%;
+      transform: translateY(-50%);
+      flex-direction: row;
+      justify-content: flex-start;
+      margin: 0;
+      z-index: 5;
+    }
+
+    .dot {
+      margin: 0 6.5px;
+      width: 35px;
+      height: 35px;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: auto auto auto;
+      grid-template-areas:
+        "box1 box2"
+        "box3 box4"
+        "model model";
+      justify-items: center;
+      align-items: center;
+      gap: 1rem;
+      width: 100%;
+      margin-top: -6rem;
+      padding: 0 0.5rem;
+    }
+
+    .stats .stat-box:nth-of-type(1) { grid-area: box1; }
+    .stats .stat-box:nth-of-type(2) { grid-area: box2; }
+    .stats .stat-box:nth-of-type(3) { grid-area: box3; }
+    .stats .stat-box:nth-of-type(4) { grid-area: box4; }
+    .stats .model-info { grid-area: model; }
+
+    .stat-box {
+      width: 100%;
+      max-width: 160px;
+      height: 100px;
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;  
+    }
+
+    .stat-box h3 {
+      font-size: 1.3rem;
+    }
+
+    .model-info {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+      width: 100%;
+      margin-top: 0.2rem;
+      transform: none;
+    }
+
+    .model-info h2 {
+      margin: 0;
+      font-size: 1.2rem;
+      letter-spacing: 0.6px;
+    }
+
+    .btn-secondary {
+      width: auto;
+      padding: 0.5rem 1rem;
+      font-size: 0.9rem;
+      margin: 0;
+    }
+
+    .container {
+      overflow: hidden;
+      min-height: auto;
+    }
+  }
   </style>
 </head>
 
@@ -473,7 +698,6 @@
       <div class="logo">
         <img src="ferrari/fer logo.png" alt="Ferrari Logo" />
       </div>
-
       <div class="nav-right">
         <div class="nav-box">
           <nav>
@@ -485,15 +709,35 @@
         </div>
         <button class="btn-primary" onclick="window.location.href='Contact.html'">Get Started</button>
       </div>
+
+      <!-- Hamburger for mobile -->
+      <div class="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <!-- Mobile nav links -->
+      <div class="mobile-nav" id="mobileNav">
+        <a href="Home.html">Home</a>
+        <a href="Vanquish.html">Cars</a>
+        <a href="Compare.html">Compare</a>
+        <a href="Contact.html">Contact</a>
+      </div>      
     </header>
 
-    <!-- Hero Section -->
     <section class="hero">
-      <p class="intro">
-        The SF90 Spider sets new performance and innovation benchmarks not only for the marque's range, but for the entire sports car sector. The new convertible has the same extreme supercar specification and record-breaking performance as the SF90 Stradale yet also adds further driving pleasure and versatility, thanks to the latest iteration of Ferrari's signature Retractable Hard Top architecture.
-      </p>
+      <div class="hero-text">
+        <h1 class="title">SF90 SPIDER</h1>
 
-      <h1 class="title">SF90 SPIDER</h1>
+        <p class="intro desktop-intro">
+          The SF90 Spider sets new performance and innovation benchmarks not only for the marque's range, but for the entire sports car sector. The new convertible has the same extreme supercar specification and record-breaking performance as the SF90 Stradale yet also adds further driving pleasure and versatility, thanks to the latest iteration of Ferrari's signature Retractable Hard Top architecture.
+        </p>
+
+        <p class="intro mobile-intro">
+          The SF90 Spider sets new performance and innovation <br>benchmarks not only for the marque's range, but for the entire sports car sector. 
+        </p>
+      </div>
 
       <!-- Car and Color Options -->
       <div class="car-display">
@@ -530,7 +774,6 @@
           <p>0-60 mph*</p>
         </div>
 
-        <!-- Keep only this ONE model-info -->
         <div class="model-info">
           <h2>NERO DAYTONA</h2>
           <button class="btn-secondary">ORDER NOW</button>
@@ -573,5 +816,11 @@
   });
 </script>
 
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById('mobileNav');
+      nav.style.display = (nav.style.display === 'flex') ? 'none' : 'flex';
+    }
+  </script>  
 </body>
 </html>
