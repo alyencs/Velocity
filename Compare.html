@@ -28,7 +28,7 @@
       position: relative;
     }
 
-    /* BACKGROUND IMAGE */
+    /* ===== BACKGROUND IMAGE ===== */
     body::before {
       content: "";
       position: fixed;
@@ -50,7 +50,7 @@
       z-index: 1;
     }
 
-    /* HEADER */
+    /* ===== HEADER ===== */
     header {
       display: flex;
       align-items: center;
@@ -108,7 +108,7 @@
       transform: scale(1.05);
     }
 
-    /* HERO */
+    /* ===== HERO ===== */
     .hero {
       text-align: center;
       margin-top: 7rem;
@@ -127,7 +127,7 @@
       margin-top: 0.5rem;
     }
 
-    /* COMPARISON TABLE */
+    /* ===== COMPARISON BOX ===== */
     .comparison-box {
       background: rgba(0,0,0,0.55);
       border-radius: 20px;
@@ -148,6 +148,7 @@
       display: block;
     }
 
+    /* ===== COMPARISON TABLE ===== */
     table.comparison-table {
       width: 100%;
       border-collapse: collapse;
@@ -168,7 +169,6 @@
       font-size: 1.2rem;
     }
 
-    /* Column widths */
     table.comparison-table th:nth-child(1) {
       width: 100px;
       text-align: left;
@@ -186,7 +186,7 @@
       padding-right: 2rem;
     }
 
-    /* Car info */
+    /* ===== CAR INFO ===== */
     .car-info {
       text-align: left;
       padding-left: 1.5rem;
@@ -207,7 +207,7 @@
     }
 
     table.comparison-table td:nth-child(3) {
-      text-align: center; 
+      text-align: center; /* center the images */
     }
 
     table.comparison-table img {
@@ -224,7 +224,7 @@
       background: rgba(255,255,255,0.05);
     }
 
-    /* NOTES ROW */
+    /* ===== NOTES ROW ===== */
     .notes-row td {
       background: rgba(255,255,255,0.1);
       color: #fff;
@@ -235,7 +235,7 @@
       font-size: 1rem;
     }
 
-    /* FOOTER */
+    /* ===== FOOTER ===== */
     footer {
       background-color: #252525;
       width: 100%;
@@ -283,6 +283,7 @@
       transform: scale(1.15);
     }
 
+    /* ===== RESPONSIVE ===== */
     @media (max-width: 768px) {
       footer {
         flex-direction: column;
@@ -313,11 +314,12 @@
         width: 100px;
       }
     }
+
   </style>
 </head>
 <body>
+  <!-- HEADER SECTION -->
   <div class="container">
-    <!-- HEADER -->
     <header>
       <div class="logo">
         <img src="Images/velocity logo.png" alt="Velocity Logo" />
@@ -335,13 +337,13 @@
       </div>
     </header>
 
-    <!-- HERO -->
+    <!-- HERO SECTION -->
     <section class="hero">
       <h1>CAR COMPARISON</h1>
       <p>Compare your favorite cars here!</p>
     </section>
 
-    <!-- COMPARISON TABLE -->
+    <!-- COMPARISON TABLE SECTION -->
     <div class="comparison-box">
       <img src="Images/background image.jpg" alt="Hero Car" class="hero-car" />
       <table class="comparison-table">
@@ -386,7 +388,7 @@
             <td><img src="mclaren/front mclaren 1.png" alt="McLaren 750S"></td>
           </tr>
 
-          <!-- NOTES ROW -->
+          <!-- NOTES ROW SECTION -->
           <tr class="notes-row">
             <td colspan="3">
               All specifications are approximate and may vary by model year and region. Check official sources for detailed information.
@@ -397,7 +399,7 @@
     </div>
   </div>
 
-  <!-- FOOTER -->
+  <!-- FOOTER SECTION -->
   <footer>
     <div class="footer-logo">
       <img src="Images/velocity logo v2.png" alt="Velocity Logo" />
