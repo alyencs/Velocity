@@ -21,6 +21,17 @@ body {
   padding: 2rem 4rem;
 }
 
+/* FLOAT ANIMATION */
+@keyframes floatCar {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+.car-image img {
+  animation: floatCar 4s ease-in-out infinite;
+}
+
 /* HEADER */
 header {
   display: flex;

@@ -162,6 +162,17 @@
       const nav = document.getElementById('mobileNav');
       nav.style.display = (nav.style.display === 'flex') ? 'none' : 'flex';
     }
+
+    // Define the array of form fields
+    const formFields = ["name", "email", "subject", "message"];
+
+    // Check for empty fields on page load
+    formFields.forEach(fieldId => {
+      const input = document.getElementById(fieldId);
+      if(input && input.value.trim() === "") {
+        console.log(`${fieldId} is empty!`);
+      }
+    });
   </script>
 </body>
 </html>
