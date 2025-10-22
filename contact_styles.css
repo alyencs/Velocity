@@ -14,7 +14,7 @@ img, video {
  
 body {
   font-family: 'Outfit', sans-serif;
-  background-color: #000;
+  background: radial-gradient(circle at center, #212121 2%, #000 100%);
   color: #fff;
   overflow-x: hidden;
 }
@@ -24,6 +24,22 @@ body {
   max-width: 1300px;
   margin: 0 auto;
   padding: 2rem 0 4rem 0;
+}
+
+/* FORM FADE IN ANIMATION */
+@keyframes fadeUpForm {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+article.contact-form {
+  animation: fadeUpForm 1s ease forwards;
 }
 
 /* HEADER */
