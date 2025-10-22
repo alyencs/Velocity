@@ -37,9 +37,7 @@ body::before {
   width: 90%;
   max-width: 1300px;
   margin: 0 auto;
-  padding: 4rem 0 2rem 0;
-  position: relative;
-  z-index: 1;
+  padding: 2rem 0 4rem 0;
 }
 
 /* CAR FADE ANIMATION */
@@ -63,11 +61,11 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 .logo img {
-  width: 180px;
+  width: 150px;
 }
 
 .nav-right {
@@ -87,12 +85,11 @@ header {
 }
 
 nav a {
-  color: white;
   margin: 0 1.2rem;
+  color: white;
   text-decoration: none;
   font-weight: 500;
   font-size: 1rem;
-  transition: all 0.3s ease;
 }
 
 nav a:hover {
