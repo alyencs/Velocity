@@ -190,10 +190,27 @@
   </footer>
  
   <script>
+    // Hero Menu Toggle
     function toggleMenu() {
       const nav = document.getElementById('mobileNav');
       nav.style.display = (nav.style.display === 'flex') ? 'none' : 'flex';
     }
+
+    // JS Examples
+    const topCars = [
+      { name: "Aston Martin Vanquish", price: 78000 },
+      { name: "Ferrari SF90 Spider", price: 78000 },
+      { name: "Lamborghini Temerario", price: 78000 },
+      { name: "McLaren 750s", price: 78000 }
+    ];
+
+    // Loop through top cars
+    topCars.forEach((car, index) => {
+      console.log(`${index + 1}. ${car.name} - $${car.price}`);
+      if (car.price > 75000) {
+        console.log(`${car.name} is a premium car!`);
+      }
+    });
   </script>
 
 </body>
