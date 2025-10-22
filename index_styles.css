@@ -205,7 +205,7 @@ nav.brand-buttons a {
 }
 
 nav.brand-buttons a:hover {
-  background: #e52b2b;
+  background: #D61C1C;
   transform: translateY(-5px);
 }
 
@@ -761,4 +761,4 @@ footer .footer-logo img {
     justify-content: center;
     gap: 1rem;
   }
-}
+} 

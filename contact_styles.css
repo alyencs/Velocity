@@ -11,7 +11,7 @@ img, video {
   max-width: 100%;
   display: block;
 }
-
+ 
 body {
   font-family: 'Outfit', sans-serif;
   background-color: #000;
@@ -212,7 +212,7 @@ article.contact-form textarea {
 
 .buttons button {
   width: 48%;
-  background: #e52b2b;
+  background: #D61C1C;
   color: white;
   font-weight: 600;
   padding: 0.9rem;
