@@ -50,8 +50,8 @@ article.contact-form {
   background: url("Images/contact-image.png") no-repeat center center / cover;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  padding: 1.5rem 5%;
+  justify-content: flex-start;
+  padding: 2rem 5%;
   overflow: hidden;
 }
 
@@ -87,6 +87,10 @@ header {
   justify-content: space-between;
 }
 
+header .logo img {
+  margin-top: -0.35rem; 
+}
+
 .logo img {
   width: 150px;
 }
@@ -108,12 +112,11 @@ header {
 }
 
 nav a {
-  color: white;
   margin: 0 1.2rem;
+  color: white;
   text-decoration: none;
   font-weight: 500;
   font-size: 1rem;
-  transition: color 0.3s ease;
 }
 
 nav a:hover {
