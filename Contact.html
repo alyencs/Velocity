@@ -3,387 +3,103 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact Us | Velocity</title>
+  <meta name="description" content="Get in touch with Velocity for inquiries about luxury cars, test drives, or exclusive services. Contact us via phone, email, WhatsApp, or visit our showroom.">
+  <title>Contact Us</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="Images/faviconn.png">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Anton&display=swap" rel="stylesheet">
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    <!-- External CSS -->
+  <link rel="stylesheet" href="contact_styles.css">  
+
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById('mobileNav');
+      nav.style.display = (nav.style.display === 'flex') ? 'none' : 'flex';
     }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: 'Outfit', sans-serif;
-      background-color: #000;
-      color: #fff;
-      overflow-x: hidden;
-      position: relative;
-    }
-
-    /* ===== BACKGROUND ===== */
-    body::before {
-      content: "";
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: #000 url("Images/contact-bg.jpg") no-repeat center center / cover;
-      filter: blur(10px) brightness(0.6);
-      z-index: -1;
-    }
-
-    .container {
-      width: 90%;
-      max-width: 1300px;
-      margin: 0 auto;
-      padding: 4rem 0 2rem 0;
-      z-index: 1;
-      position: relative;
-    }
-
-    /* ===== HEADER ===== */
-    header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 2rem;
-    }
-
-    .logo img {
-      width: 180px;
-    }
-
-    .nav-right {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
-
-    .nav-box {
-      display: flex;
-      align-items: center;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      padding: 0.6rem 2rem;
-      border-radius: 8px;
-      backdrop-filter: blur(8px);
-    }
-
-    nav a {
-      color: white;
-      margin: 0 1.2rem;
-      text-decoration: none;
-      font-weight: 500;
-      font-size: 1rem;
-      transition: all 0.3s ease;
-    }
-
-    nav a:hover {
-      color: #aaa;
-    }
-
-    .btn-primary {
-      background: linear-gradient(90deg, #ffffff, #cfcfcf);
-      color: black;
-      border: none;
-      padding: 0.7rem 1.5rem;
-      border-radius: 8px;
-      font-weight: 600;
-      cursor: pointer;
-      box-shadow: 0 3px 8px rgba(255, 255, 255, 0.15);
-      transition: transform 0.2s ease;
-    }
-
-    .btn-primary:hover {
-      transform: scale(1.05);
-    }
-
-    /* ===== HERO ===== */
-    .hero {
-      text-align: center;
-      margin-top: 7rem;
-      margin-bottom: 3rem;
-    }
-
-    .hero h1 {
-      font-family: 'Anton', sans-serif;
-      font-size: 3rem;
-      letter-spacing: 2px;
-    }
-
-    /* ===== CONTACT SECTION ===== */
-    .contact-section {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 3rem;
-      margin-bottom: 3rem;
-    }
-
-    /* ===== CONTACT FORM ===== */
-    .contact-form {
-      flex: 1;
-      min-width: 350px;
-      background: #b30000;
-      border-radius: 20px;
-      padding: 2rem;
-    }
-
-    .contact-form h2 {
-      font-family: 'Anton', sans-serif;
-      font-size: 2rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .contact-form label {
-      display: block;
-      font-size: 1rem;
-      font-weight: 500;
-      margin-bottom: 0.3rem;
-    }
-
-    .contact-form input,
-    .contact-form textarea {
-      width: 100%;
-      padding: 0.8rem;
-      margin-bottom: 1rem;
-      border: none;
-      border-radius: 6px;
-      background: rgba(255, 255, 255, 0.2);
-      color: #fff;
-      font-size: 1rem;
-    }
-
-    .contact-form input::placeholder,
-    .contact-form textarea::placeholder {
-      color: #ddd;
-    }
-
-    .contact-form textarea {
-      resize: none;
-      height: 120px;
-    }
-
-    .contact-form button {
-      width: 100%;
-      background: #e52b2b;
-      color: white;
-      font-weight: 600;
-      padding: 0.9rem;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-
-    .contact-form button:hover {
-      background: #ff4040;
-    }
-
-    /* ===== CONTACT INFO ===== */
-    .contact-info {
-      flex: 1;
-      min-width: 350px;
-    }
-
-    .contact-info p {
-      color: #ddd;
-      margin-bottom: 1.5rem;
-      line-height: 1.6;
-    }
-
-    .info-group {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
-      margin-bottom: 2rem;
-    }
-
-    .info-item {
-      flex: 1 1 45%;
-    }
-
-    .info-item img {
-      width: 22px;
-      margin-bottom: 0.3rem;
-    }
-
-    .info-item span {
-      color: #fff;
-      font-weight: 600;
-    }
-
-    .info-item p {
-      color: #ccc;
-      margin-top: 0.3rem;
-    }
-
-    .map {
-      width: 100%;
-      border-radius: 15px;
-      overflow: hidden;
-      margin-bottom: 2rem;
-    }
-
-    .map iframe {
-      width: 100%;
-      height: 250px;
-      border: none;
-    }
-
-    /* ===== VIDEO EMBED ===== */
-    .video-section {
-      width: 100%;
-      margin-top: 2rem;
-      border-radius: 15px;
-      overflow: hidden;
-    }
-
-    .video-section iframe {
-      width: 100%;
-      height: 400px;
-      border: none;
-      display: block;
-    }
-
-    /* ===== FOOTER ===== */
-    footer {
-      background-color: #252525;
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-top: 3rem;
-      padding: 2.5rem 5rem;
-      border-top: 1px solid rgba(255, 255, 255, 0.15);
-      font-size: 1rem;
-      color: #ccc;
-      border-radius: 10px 10px 0 0;
-    }
-
-    footer .footer-logo {
-      display: flex;
-      align-items: center;
-      gap: 5rem;
-    }
-
-    footer .footer-logo img {
-      width: 150px;
-    }
-
-    .contact-icons {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      text-align: right;
-      gap: 0.8rem;
-    }
-
-    .social-icons {
-      display: flex;
-      gap: 1.5rem;
-    }
-
-    .social-icons img {
-      width: 18px;
-      height: 18px;
-      cursor: pointer;
-      transition: transform 0.3s ease;
-    }
-
-    .social-icons img:hover {
-      transform: scale(1.15);
-    }
-
-    /* ===== RESPONSIVE ===== */
-    @media (max-width: 768px) {
-      .contact-section {
-        flex-direction: column;
-      }
-
-      footer {
-        flex-direction: column;
-        text-align: center;
-        gap: 1.5rem;
-        padding: 2rem;
-      }
-
-      .footer-logo {
-        flex-direction: column;
-        gap: 1rem;
-      }
-
-      .contact-icons {
-        align-items: center;
-      }
-    }
-  </style>
+  </script>
 </head>
-
 <body>
-  <div class="container">
-    <!-- HEADER -->
+
+  <!-- HEADER SECTION -->
+  <div class="header-bg">
     <header>
       <div class="logo">
         <img src="Images/velocity logo.png" alt="Velocity Logo" />
-      </div>
+      </div> 
 
       <div class="nav-right">
         <div class="nav-box">
           <nav>
-            <a href="#">Home</a>
-            <a href="#">Cars</a>
-            <a href="#">Compare</a>
-            <a href="#" style="color: #aaa; font-weight: 600;">Contact</a>
-          </nav>
+            <a href="index.html">Home</a>
+            <a href="Vanquish.html">Cars</a>
+            <a href="Compare.html">Compare</a>
+            <a href="Contact.html" style="color: #aaa; font-weight: 600;">Contact</a>
+          </nav> 
         </div>
-        <button class="btn-primary">Get Started</button>
+        <button class="btn-primary" onclick="window.location.href='Contact.html'">Get Started</button>
+      </div>
+
+      <!-- Hamburger for mobile -->
+      <div class="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <!-- Mobile nav links -->
+      <div class="mobile-nav" id="mobileNav">
+        <a href="index.html">Home</a>
+        <a href="Vanquish.html">Cars</a>
+        <a href="Compare.html">Compare</a>
+        <a href="Contact.html">Contact</a>
       </div>
     </header>
 
-    <!-- HERO -->
-    <section class="hero">
+    <div class="hero">
       <h1>CONTACT US</h1>
-    </section>
+    </div>
+  </div>
 
-    <!-- CONTACT SECTION -->
-    <div class="contact-section">
-      <!-- LEFT: FORM -->
-      <div class="contact-form">
-        <h2>Get In Touch</h2>
-        <form>
-          <label for="name">Name</label>
-          <input type="text" id="name" placeholder="Your Name" required />
+  <!-- MAIN CONTAINER -->
+  <div class="container">
+    <section class="contact-section">
 
-          <label for="email">Email</label>
-          <input type="email" id="email" placeholder="yourname@gmail.com" required />
-
-          <label for="subject">Subject</label>
-          <input type="text" id="subject" placeholder="Title" required />
-
-          <label for="message">Message</label>
-          <textarea id="message" placeholder="Type Here..." required></textarea>
-
-          <button type="submit">Send Now</button>
-        </form>
+      <!-- LEFT COLUMN --> 
+      <div class="form-column">
+        <article class="contact-form">
+          <h2>Get In Touch</h2>
+          <form>
+            <fieldset>
+              <legend>Personal Info</legend>
+              <label for="name">Name</label>
+              <input type="text" id="name" placeholder="Your Name" required />
+              <label for="email">Email</label>
+              <input type="email" id="email" placeholder="yourname@gmail.com" required />
+            </fieldset>
+            <fieldset>
+              <legend>Message Details</legend>
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" placeholder="Title" required />
+              <label for="message">Message</label>
+              <textarea id="message" placeholder="Type Here..." required></textarea>
+            </fieldset>
+            <div class="buttons">
+              <button type="submit">Submit</button>
+              <button type="reset">Reset</button>
+            </div>
+          </form>
+        </article>
       </div>
 
-      <!-- RIGHT: INFO -->
-      <div class="contact-info">
-        <p>
-          At Velocity, we're passionate about bringing you the best car brands all in one place.
-          Whether you have a question about our vehicles, need help finding the right model, or want to
-          book a test drive, our team is here to help. Reach out to us today—we'd love to hear from you!
-        </p>
+      <!-- RIGHT COLUMN -->
+      <div class="right-column">
+        <div class="form-intro">
+          <p>At Velocity, we're passionate about bringing you the best car brands all in one place. Whether you have a question about our vehicles, need help finding the right model, or want to book a test drive, our team is here to help. Reach out to us today—we'd love to hear from you!</p>
+        </div>
 
         <div class="info-group">
           <div class="info-item">
@@ -408,25 +124,26 @@
           </div>
         </div>
 
-        <!-- LIVE GOOGLE MAP -->
         <div class="map">
-          <iframe
+          <iframe 
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3302.182332241252!2d-118.40199392458342!3d34.07362007315102!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2beb4a9e1d833%3A0x2f7e6e2ebeb7b945!2sBeverly%20Hills%2C%20CA%2090210%2C%20USA!5e0!3m2!1sen!2sus!4v1716079044092!5m2!1sen!2sus"
-            allowfullscreen=""
-            loading="lazy">
+            allowfullscreen
+            loading="lazy"
+            title="Beverly Hills Location">
           </iframe>
         </div>
       </div>
-    </div>
+    </section>
 
     <!-- VIDEO SECTION -->
-    <div class="video-section">
-      <iframe 
-        src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
-        title="Velocity Showroom Tour"
-        allowfullscreen>
-      </iframe>
-    </div>
+    <section class="video-section">
+      <video controls poster="Images/media/poster.png" title="Velocity Car Montage">
+        <source src="Images/media/video.mp4" type="video/mp4" />
+        <source src="Images/media/video.webm" type="video/webm" />
+        <track src="Images/media/captions.vtt" kind="subtitles" srclang="en" label="English" default />
+        Your browser does not support the video tag.
+      </video>
+    </section>
   </div>
 
   <!-- FOOTER -->
@@ -437,13 +154,20 @@
     </div>
     <div class="contact-icons">
       <div class="social-icons">
-        <img src="Images/phone-icon.png" alt="Phone Icon" />
-        <img src="Images/email-icon.png" alt="Email Icon" />
-        <img src="Images/whatsapp-icon.png" alt="WhatsApp Icon" />
-        <img src="Images/location-icon.png" alt="Location Icon" />
+        <a href="Contact.html"><img src="Images/phone-icon.png" alt="Phone Icon" /></a>
+        <a href="Contact.html"><img src="Images/email-icon.png" alt="Email Icon" /></a>
+        <a href="Contact.html"><img src="Images/whatsapp-icon.png" alt="WhatsApp Icon" /></a>
+        <a href="Contact.html"><img src="Images/location-icon.png" alt="Location Icon" /></a>
       </div>
       <span>Contact Information</span>
     </div>
   </footer>
+
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById('mobileNav');
+      nav.style.display = (nav.style.display === 'flex') ? 'none' : 'flex';
+    }
+  </script>  
 </body>
 </html>
