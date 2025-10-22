@@ -616,6 +616,7 @@ footer .footer-logo img {
     text-decoration: none;
     page-break-inside: avoid;
     line-height: 1.2;
+    box-shadow: none;
   }
 
   nav.brand-buttons img {
@@ -627,7 +628,7 @@ footer .footer-logo img {
     display: block;
     margin: 1rem auto;
     width: 80%;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6);
+    box-shadow: none; 
   }
 
   article.service-row {
@@ -642,6 +643,7 @@ footer .footer-logo img {
     background: #fff;
     color: #000;
     padding: 0.5rem 0;
+    box-shadow: none; 
   }
 
   .service-img {
@@ -650,6 +652,7 @@ footer .footer-logo img {
     height: auto;
     object-fit: cover;
     margin-top: 0.3rem;
+    box-shadow: none; 
   }
 }
 
